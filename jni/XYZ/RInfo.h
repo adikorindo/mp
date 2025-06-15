@@ -21,11 +21,11 @@ struct PlayerDataZ {
 };
 
 struct {
-    PlayerDataZ PlayerB[10];
-    PlayerDataZ PlayerR[10];
+    PlayerDataZ PlayerB[5]; //10
+    PlayerDataZ PlayerR[5];
 } RoomInfoZ;
 
-void RoomInfoList2() {
+void RoomInfoList() {
     void *LogicBattleManager_Instance;
     Il2CppGetStaticFieldValue("Assembly-CSharp.dll", "", "LogicBattleManager", "Instance", &LogicBattleManager_Instance);
     if (LogicBattleManager_Instance) {
@@ -38,8 +38,8 @@ void RoomInfoList2() {
             for (int i = 0; i < m_RoomPlayerInfo->getSize(); i++) {
                 auto roomData = m_RoomPlayerInfo->getItems()[i];
                 if (!roomData) continue;
-                auto iCamp = *(int *) ((uintptr_t)roomData + RoomData_iCamp2);
-                auto lUid = *(int *) ((uintptr_t)roomData + RoomData_lUid2);
+                auto iCamp = *(int *) ((uintptr_t)roomData + RoomData_iCamp);
+                auto lUid = *(int *) ((uintptr_t)roomData + RoomData_lUid);
                 if (lUid != m_uiID) continue;
                 iSelfCamp = iCamp;
                 break;
@@ -47,22 +47,34 @@ void RoomInfoList2() {
             for (int i = 0; i < m_RoomPlayerInfo->getSize(); i++) {
                 auto roomData = m_RoomPlayerInfo->getItems()[i];
                 if (!roomData) continue;
-                auto iCamp = *(int *) ((uintptr_t)roomData + RoomData_iCamp2);
-                auto lUid = *(int *) ((uintptr_t)roomData + RoomData_lUid2);
-                auto uiZoneId = *(int *) ((uintptr_t)roomData + RoomData_uiZoneId2);
-                auto *_sName = *(String **) ((uintptr_t)roomData + RoomData_sName2);
+                auto iCamp = *(int *) ((uintptr_t)roomData + RoomData_iCamp);
+                auto lUid = *(int *) ((uintptr_t)roomData + RoomData_lUid);
+                auto uiZoneId = *(int *) ((uintptr_t)roomData + RoomData_uiZoneId);
+                auto _sName = *(String **) ((uintptr_t)roomData + RoomData_sName);
+                    auto _steamSimpleName = *(String **)((uintptr_t)roomData + RoomData__steamSimpleName);
+                    auto _steamName = *(String **)((uintptr_t)roomData + RoomData__steamName);
+                    auto uiRankLevel = *(int *) ((uintptr_t)roomData + RoomData_uiRankLevel);
+                    auto iMythPoint = *(int *) ((uintptr_t)roomData + RoomData_iMythPoint);
+                    auto heroid = *(int *) ((uintptr_t)roomData + RoomData_heroid);
+                    auto summonSkillId = *(int *) ((uintptr_t)roomData + RoomData_summonSkillId);
+                    
                 if (iCamp == iSelfCamp) {
                     if (_sName) {
                         RoomInfoZ.PlayerB[PlayerB].Name = _sName->toString();
                     }
                     RoomInfoZ.PlayerB[PlayerB].UserID = to_string(lUid) + " (" + to_string(uiZoneId) + ")";
+                    RoomInfoZ.PlayerB[PlayerB].Rank = RankToString(uiRankLevel, iMythPoint);
+                    RoomInfoZ.PlayerB[PlayerB].Hero = HeroToString(heroid);
+                    RoomInfoZ.PlayerB[PlayerB].Spell = SpellToString(summonSkillId);
                     PlayerB++;
                 } else {
                     if (_sName) {
                         RoomInfoZ.PlayerR[PlayerR].Name = _sName->toString();
                     }
                     RoomInfoZ.PlayerR[PlayerR].UserID = to_string(lUid) + " (" + to_string(uiZoneId) + ")";
-                    
+                    RoomInfoZ.PlayerR[PlayerR].Rank = RankToString(uiRankLevel, iMythPoint);
+                    RoomInfoZ.PlayerR[PlayerR].Hero = HeroToString(heroid);
+                    RoomInfoZ.PlayerR[PlayerR].Spell = SpellToString(summonSkillId);
                     PlayerR++;
                     }
                 }
