@@ -278,16 +278,16 @@ void DrawMenu() {
                             ImGui::TableSetColumnIndex(column);
                             char buf[32];
                             if (column == 0) {
-                                sprintf(buf, "%s", RoomInfo.PlayerB[row].Name.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].Name.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 1) {
-                                sprintf(buf, "%s", RoomInfo.PlayerB[row].UserID.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].UserID.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 2) {
-                                sprintf(buf, "%s", RoomInfo.PlayerB[row].Rank.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].Rank.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 3) {
-                                sprintf(buf, "%s", RoomInfo.PlayerB[row].Hero.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].Hero.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 4) {
                                 sprintf(buf, "%s", RoomInfo.PlayerB[row].Spell.c_str());
@@ -311,19 +311,19 @@ void DrawMenu() {
                             ImGui::TableSetColumnIndex(column);
                             char buf[32];
                             if (column == 0) {
-                                sprintf(buf, "%s", RoomInfo.PlayerR[row].Name.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Name.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 1) {
-                                sprintf(buf, "%s", RoomInfo.PlayerR[row].UserID.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].UserID.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 2) {
-                                sprintf(buf, "%s", RoomInfo.PlayerR[row].Rank.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Rank.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 3) {
-                                sprintf(buf, "%s", RoomInfo.PlayerR[row].Hero.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Hero.c_str());
                                 ImGui::TextUnformatted(buf);
                             } else if (column == 4) {
-                                sprintf(buf, "%s", RoomInfo.PlayerR[row].Spell.c_str());
+                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Spell.c_str());
                                 ImGui::TextUnformatted(buf);
                             }
                         }
