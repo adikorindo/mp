@@ -268,7 +268,7 @@ void *main_thread(void *) {
     Tools::Hook((void *) AntiCheatReporter_HasSkillInfo, (void *) iAntiCheatReporter_HasSkillInfo, (void **) &oAntiCheatReporter_HasSkillInfo);
     
 	Tools::Hook((void *) ShowBattleControl_SetAntiCheatReport, (void *) iSetAntiCheatReport, (void **) &oSetAntiCheatReport);
-	RoomInfoList();
+	
     pthread_t t;
     return 0;
 }
