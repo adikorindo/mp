@@ -264,7 +264,7 @@ void DrawMenu() {
 		if (selectedFeatures == 1 | selectedFeatures == 2){
 				if (ImGui::BeginTabItem("Info Room")) { // Tab Info Room
                 // Pindahkan konten Info Room ke dalam tab ini
-                RoomInfoList();
+                //RoomInfoList();
                 ImGui::TextColored(ImVec4(0.0f, 0.8f, 1.0f, 1.0f), "Team");
                 if (ImGui::BeginTable("##Team", 6, ImGuiTableFlags_BordersOuter | ImGuiTableFlags_BordersInner)) {
                     ImGui::TableSetupColumn("Name", 0, 150);
