@@ -1,3 +1,5 @@
+#include "XYZ/RInfo.h"
+
 bool showMenu = true;
 bool bFullChecked = false;
 int selectedFeatures = 1;
