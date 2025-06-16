@@ -261,80 +261,8 @@ void DrawMenu() {
         }
     } else { 
 		if (ImGui::BeginTabBar("Tab", ImGuiTabBarFlags_FittingPolicyScroll)) {
-		if (selectedFeatures == 1 | selectedFeatures == 2){
-				if (ImGui::BeginTabItem("Info Room")) { // Tab Info Room
-                // Pindahkan konten Info Room ke dalam tab ini
-                //RoomInfoList();
-                ImGui::TextColored(ImVec4(0.0f, 0.8f, 1.0f, 1.0f), "Team");
-                if (ImGui::BeginTable("##Team", 6, ImGuiTableFlags_BordersOuter | ImGuiTableFlags_BordersInner)) {
-                    ImGui::TableSetupColumn("Name", 0, 150);
-                    ImGui::TableSetupColumn("User ID", 0, 160);
-                    ImGui::TableSetupColumn("Rank", 0, 180);
-                    ImGui::TableSetupColumn("Hero", 0, 130);
-                    ImGui::TableSetupColumn("Spell", 0, 120);
-                    ImGui::TableHeadersRow();
-                    for (int row = 0; row < 5; row++) {
-                        ImGui::TableNextRow();
-                        for (int column = 0; column < 5; column++) {
-                            ImGui::TableSetColumnIndex(column);
-                            char buf[32];
-                            if (column == 0) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].Name.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 1) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].UserID.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 2) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].Rank.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 3) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerB[row].Hero.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 4) {
-                                sprintf(buf, "%s", RoomInfo.PlayerB[row].Spell.c_str());
-                                ImGui::TextUnformatted(buf);
-                            }
-                        }
-                    }
-                    ImGui::EndTable();
-                }
-                ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "Enemy");
-                if (ImGui::BeginTable("##Enemy", 6, ImGuiTableFlags_BordersOuter | ImGuiTableFlags_BordersInner)) {
-                    ImGui::TableSetupColumn("Name", 0, 150);
-                    ImGui::TableSetupColumn("User ID", 0, 160);
-                    ImGui::TableSetupColumn("Rank", 0, 180);
-                    ImGui::TableSetupColumn("Hero", 0, 130);
-                    ImGui::TableSetupColumn("Spell", 0, 120);
-                    ImGui::TableHeadersRow();
-                    for (int row = 0; row < 5; row++) {
-                        ImGui::TableNextRow();
-                        for (int column = 0; column < 5; column++) {
-                            ImGui::TableSetColumnIndex(column);
-                            char buf[32];
-                            if (column == 0) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Name.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 1) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].UserID.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 2) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Rank.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 3) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Hero.c_str());
-                                ImGui::TextUnformatted(buf);
-                            } else if (column == 4) {
-                                sprintf(buf, "%s", RoomInfoZ.PlayerR[row].Spell.c_str());
-                                ImGui::TextUnformatted(buf);
-                            }
-                        }
-                    }
-                    ImGui::EndTable();
-                }
-                ImGui::EndTabItem(); // Akhir Tab Info Room
-}
-		}
-					
+		 
+                 			
 			if (selectedFeatures == 1 | selectedFeatures == 2){
 				if (ImGui::BeginTabItem("ESP Player")) {
             	if (ImGui::CollapsingHeader("Player")) {
