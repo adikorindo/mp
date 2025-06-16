@@ -1,4 +1,3 @@
-#include "XYZ/RInfo.h"
 
 bool showMenu = true;
 bool bFullChecked = false;
