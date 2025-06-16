@@ -82,7 +82,7 @@
 #include "XYZ/DrawESP.h"
 #include "XYZ/Bypass.h"
 #include "DrawMenu.h"
-#include "XYZ/RInfo.h"
+
 
 #undef stderr
 #undef stdout
